@@ -14,9 +14,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
+API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from Vercel's environment variables
+
+if not API_TOKEN:
+    raise ValueError("API Key not found! Make sure to set the API_KEY environment variable in your Vercel project settings.")
+    
 class IndianKanoonDownloader:
     def __init__(self):
-        self.api_key = "b2dd13cd3162e7ecc7eba6e9636fdd33fe8755b4"
+        self.api_key = API_TOKEN
         self.base_url = "https://api.indiankanoon.org"
         self.headers = {
             'Authorization': f"Token {self.api_key}",
