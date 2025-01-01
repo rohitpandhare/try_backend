@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# API_TOKEN = "63ec6326ae3d158b05d38d232f2a063e1cc79bcb"
 API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from Vercel's environment variables
 if not API_TOKEN:
     raise ValueError("API Key not found! Make sure to set the API_KEY environment variable in your Vercel project settings.")
