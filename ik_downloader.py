@@ -14,9 +14,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from the environment
+if not API_TOKEN:
+    raise ValueError("API Key not found! Make sure to set the API_KEY environment variable.")
+    
 class IndianKanoonDownloader:
     def __init__(self):
-        self.api_key = "6de17b972dc842fca22883615f5fc008ba8075e0"
+        self.api_key = API_TOKEN
         self.base_url = "https://api.indiankanoon.org"
         self.headers = {
             'Authorization': f"Token {self.api_key}",
