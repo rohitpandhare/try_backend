@@ -14,10 +14,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from the environment
-if not API_TOKEN:
-    raise ValueError("API Key not found! Make sure to set the API_KEY environment variable.")
-    
 class IndianKanoonDownloader:
     def __init__(self):
         self.api_key = b2dd13cd3162e7ecc7eba6e9636fdd33fe8755b4
