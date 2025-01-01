@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "6de17b972dc842fca22883615f5fc008ba8075e0"
+API_KEY = "b2dd13cd3162e7ecc7eba6e9636fdd33fe8755b4"
 BASE_URL = "https://api.indiankanoon.org"
 
 def get_headers():
