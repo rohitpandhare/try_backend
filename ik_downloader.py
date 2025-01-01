@@ -20,7 +20,7 @@ if not API_TOKEN:
     
 class IndianKanoonDownloader:
     def __init__(self):
-        self.api_key = API_TOKEN
+        self.api_key = b2dd13cd3162e7ecc7eba6e9636fdd33fe8755b4
         self.base_url = "https://api.indiankanoon.org"
         self.headers = {
             'Authorization': f"Token {self.api_key}",
