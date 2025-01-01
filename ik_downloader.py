@@ -14,7 +14,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# API_TOKEN = "63ec6326ae3d158b05d38d232f2a063e1cc79bcb"
 API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from Vercel's environment variables
 
 if not API_TOKEN:
