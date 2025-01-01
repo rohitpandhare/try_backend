@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import logging
 import requests
+import os
 
 # Configure logging
 logging.basicConfig(
@@ -13,7 +14,11 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "b2dd13cd3162e7ecc7eba6e9636fdd33fe8755b4"
+API_TOKEN = os.getenv("API_KEY")  # Fetch the API key from Vercel's environment variables
+if not API_TOKEN:
+    raise ValueError("API Key not found! Make sure to set the API_KEY environment variable in your Vercel project settings.")
+    
+API_KEY = API_TOKEN
 BASE_URL = "https://api.indiankanoon.org"
 
 def get_headers():
